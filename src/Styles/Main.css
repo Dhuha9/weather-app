@@ -1,0 +1,13 @@
+.paddingHeader {
+  padding: 20px 8px;
+}
+h2 {
+  color: "#26a9a0";
+}
+p {
+  margin: "8px 16px";
+}
+.alignment {
+  margin: 60px auto;
+  width: 90%;
+}
