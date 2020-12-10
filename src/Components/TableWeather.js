@@ -3,7 +3,6 @@ import DropdownMenu from "./DropdownMenu";
 import "../Styles/TableStyle.css";
 
 const TableWeather = ({ weatherData }) => {
-  
   const [checkedToFilter, setcheckedToFilter] = useState({});
 
   const handleCheckBox = (checkedItems) => {
@@ -57,4 +56,6 @@ const TableWeather = ({ weatherData }) => {
     </div>
   );
 };
-export default TableWeather;
+const checkEquality = (prevTableWeather, NextTableWeather) =>
+  JSON.stringify(prevTableWeather) === JSON.stringify(NextTableWeather);
+export default React.memo(TableWeather, checkEquality);

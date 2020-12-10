@@ -3,6 +3,8 @@ import Graph from "./GraphWeather";
 import Table from "./TableWeather";
 import { API_KEY, LOCATION_KEY, LOCATION_NAME } from "../ConstantApi";
 import "../Styles/Main.css";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 
 const Main = () => {
   let [weatherData, setweatherData] = useState({
@@ -83,7 +85,7 @@ const Main = () => {
 
   const fetchingData = () =>
     fetch(
-      `http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${LOCATION_KEY}?apikey=${API_KEY}&language=en-us&details=true&metric=true`
+      `https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${LOCATION_KEY}?apikey=${API_KEY}&language=en-us&details=true&metric=true`
     )
       .then((res) => res.json())
       .then((result) => {
@@ -115,7 +117,15 @@ const Main = () => {
           <br />
           <Table weatherData={weatherData} />
         </>
-      ) : null}
+      ) : (
+        <Loader
+          type="TailSpin"
+          color="#26a9a0"
+          height={100}
+          width={100}
+          timeout={3000}
+        />
+      )}
     </div>
   );
 };
