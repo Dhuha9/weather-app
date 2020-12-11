@@ -16,6 +16,7 @@
   color: #26a9a0;
   text-align: start;
 }
+
 .weatherTable {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -40,10 +41,14 @@
   background-color: #ddd;
 }
 
-.down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
+.weatherTable th,
+.blue-center-text {
+  background-color: #26a9a0;
+  color: white;
+  font-size: 16px;
+  text-align: center;
 }
+
 .arrow {
   border: solid rgb(255, 255, 255);
   border-width: 0 3px 3px 0;
@@ -51,6 +56,11 @@
   padding: 3px;
   cursor: pointer;
   margin-left: 4px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 
 label {
@@ -62,50 +72,46 @@ input {
   margin-right: 7px;
 }
 
-.responsive {
+.make-sticky {
   position: -webkit-sticky;
   position: sticky;
   left: 0;
   z-index: 2;
 }
-.weatherTable th,
-.blue-center-text {
-  background-color: #26a9a0;
-  color: white;
-  font-size: 16px;
-  text-align: center;
-}
+
 .center-item {
   display: flex;
   justify-content: center;
   margin: 16px 4px 6px 4px;
 }
-.btn {
+
+.btn-shape {
   padding: 3px;
   width: 80%;
   border: none;
   border-radius: 5px;
 }
-.header-cont {
+
+.make-cell-table {
   display: table-cell;
   margin: 0 4px;
 }
-.hh {
+
+.table-header {
   display: flex;
   align-items: center;
   padding: 6px;
   min-width: 80px;
   min-height: 30px;
 }
+
 th:first-child {
   padding: 1px;
-
   left: 0;
   z-index: 6;
 }
-.pos {
-  position: relative;
-}
+
 .overflow {
   overflow-x: auto;
+  min-height: 500px;
 }

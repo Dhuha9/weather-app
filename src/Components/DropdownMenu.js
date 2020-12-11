@@ -60,11 +60,11 @@ const DropdownMenu = ({ weather, label, handleCheckBox, i }) => {
 
   return (
     <div className="dropdown " key={"arrow" + label} ref={outside}>
-      <div className=" hh">
-        <div className="blue-center-text header-cont ">
+      <div className="table-header">
+        <div className="blue-center-text make-cell-table">
           <span>{label}</span>
         </div>
-        <div className="header-cont">
+        <div className="make-cell-table">
           <i
             className="arrow down"
             key={"arrow" + label}
@@ -73,7 +73,11 @@ const DropdownMenu = ({ weather, label, handleCheckBox, i }) => {
         </div>
       </div>
       {toggle ? (
-        <div id="myDropdown" className="dropdown-content" key={"d" + label}>
+        <div
+          id={"filterDropdown" + label}
+          className="dropdown-content"
+          key={"d" + label}
+        >
           {weatherFilterOptions.map((option, i) => (
             <label htmlFor={i + label + "id"} key={i + label + "lb"}>
               <input
@@ -95,7 +99,7 @@ const DropdownMenu = ({ weather, label, handleCheckBox, i }) => {
           ))}
           <div className="center-item" key={"bt" + label}>
             <button
-              className="blue-center-text btn"
+              className="blue-center-text btn-shape"
               onClick={() => {
                 settoggle(false);
                 handleCheckBox(checked.filterdItems);

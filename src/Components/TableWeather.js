@@ -18,7 +18,7 @@ const TableWeather = ({ weatherData }) => {
               weatherData[key].label ? (
                 <th
                   key={i + "headTh"}
-                  id="heading"
+                  id={"heading" + i}
                   className={i === 0 ? "" : ""}
                 >
                   <DropdownMenu
@@ -34,23 +34,21 @@ const TableWeather = ({ weatherData }) => {
           </tr>
         </thead>
         <tbody>
-          {weatherData.Temperature.data.map((item, i) => (
-            <tr key={i}>
-              {!checkedToFilter[i] ? (
-                <>
-                  <th className="responsive">
-                    {weatherData.weatherHours.data[i]}
-                  </th>
-                  <td>{weatherData.Temperature.data[i]}</td>
-                  <td>{weatherData.RealFeelTemperature.data[i]}</td>
-                  <td>{weatherData.Rain.data[i]}</td>
-                  <td>{weatherData.Snow.data[i]}</td>
-                  <td>{weatherData.DewPoint.data[i]}</td>
-                  <td>{weatherData.CloudCover.data[i]}</td>
-                </>
-              ) : null}
-            </tr>
-          ))}
+          {weatherData.Temperature.data.map((item, i) =>
+            !checkedToFilter[i] ? (
+              <tr key={i}>
+                <th className="make-sticky">
+                  {weatherData.weatherHours.data[i]}
+                </th>
+                <td>{weatherData.Temperature.data[i]}</td>
+                <td>{weatherData.RealFeelTemperature.data[i]}</td>
+                <td>{weatherData.Rain.data[i]}</td>
+                <td>{weatherData.Snow.data[i]}</td>
+                <td>{weatherData.DewPoint.data[i]}</td>
+                <td>{weatherData.CloudCover.data[i]}</td>
+              </tr>
+            ) : null
+          )}
         </tbody>
       </table>
     </div>
